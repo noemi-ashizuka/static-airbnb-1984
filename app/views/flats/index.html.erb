@@ -1,21 +1,19 @@
 <div class="container">
   <h1>Flats</h1>
 
-<div class="cards">
-  <% @flats.each do |flat| %>
-    <div class="card-trip">
-      <%= image_tag flat["imageUrl"], alt: "#{flat['name']} photo" %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= flat['name'] %></h2>
+  <div class="cards">
+    <% @flats.each do |flat| %>
+      <div class="card-trip">
+        <%= image_tag flat["imageUrl"], alt: "#{flat['name']} photo" %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= flat['name'] %></h2>
+          </div>
+          <h2 class="card-trip-pricing">£<%= flat['price'] %></h2> 
         </div>
-        <h2 class="card-trip-pricing">£<%= flat['price'] %></h2> 
+        <%= link_to "", flat_path(flat['id']), class: "card-trip-link" %>
       </div>
-      <%= link_to "", flat_path(flat['id']), class: "card-trip-link" %>
-    </div>
 
-  <% end %>
-</div>
-
-  
+    <% end %>
+  </div>
 </div>
