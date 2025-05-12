@@ -7,4 +7,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root to: "flats#index" # root prefix
+  get "flats/:id", to: "flats#show", as: :flat
 end
+
+# CRUD
+# Read all -> index -> prefix is the thing plurar (/flats) flats_path
+# Read one -> show -> prefix is the thing singular 
+
+# Airbnb show page
+# https://www.airbnb.com/rooms/980811991523899837
